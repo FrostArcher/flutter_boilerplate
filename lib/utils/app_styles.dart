@@ -251,37 +251,37 @@ class AppTheme {
   );
 
   ThemeData get theme => ThemeData(
-    primarySwatch: kSwatch,
+    // primarySwatch: kSwatch,
     textSelectionTheme: _textSelectionTheme,
     colorScheme: ColorScheme(
-      primary: colors[settings.color].primary,
-      secondary: colors[settings.color].secondary,
-      surface: Colors.white,
-      error: kErrorColor,
+      primary: Colors.white,
+      secondary: Colors.blueAccent,
+      surface: Colors.blue,
+      error: Colors.red,
       onPrimary: Colors.white,
       onSecondary: Colors.white,
-      onSurface: kSwatch,
+      onSurface: Colors.lightGreen,
       onError: Colors.white,
       brightness: Brightness.light,
     ),
-    buttonTheme: ButtonThemeData(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(kRadius),
-      ),
-      height: 36,
-      colorScheme: ColorScheme(
-        primary: colors[settings.color].secondary,
-        secondary: Colors.white,
-        surface: colors[settings.color].secondary,
-        error: kErrorColor,
-        onPrimary: Colors.white,
-        onSecondary: Colors.white,
-        onSurface: Colors.white,
-        onError: Colors.white,
-        brightness: Brightness.dark,
-      ),
-      buttonColor: colors[settings.color].secondary,
-    ),
+    // buttonTheme: ButtonThemeData(
+    //   shape: RoundedRectangleBorder(
+    //     borderRadius: BorderRadius.circular(kRadius),
+    //   ),
+    //   height: 36,
+    //   colorScheme: ColorScheme(
+    //     primary: Colors.blue,
+    //     secondary: Colors.blueAccent,
+    //     surface: Colors.white,
+    //     error: Colors.red,
+    //     onPrimary: Colors.white,
+    //     onSecondary: Colors.white,
+    //     onSurface: Colors.lightGreen,
+    //     onError: Colors.white,
+    //     brightness: Brightness.light,
+    //   ),
+    //   buttonColor: Colors.blue,
+    // ),
     popupMenuTheme: PopupMenuThemeData(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(kRadiusSmall),

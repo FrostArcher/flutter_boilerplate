@@ -9,7 +9,6 @@ import 'package:newappmytectra/utils/localizations.dart';
 import 'package:newappmytectra/utils/navutils.dart';
 import 'package:provider/provider.dart';
 
-
 class LandingScreen extends StatelessWidget {
   final String? initialRoute;
 
@@ -40,8 +39,8 @@ class LandingScreen extends StatelessWidget {
           AppTheme appTheme = AppTheme(settings);
           return MaterialApp(
             theme: appTheme.theme,
-            darkTheme: appTheme.darkTheme,
-            themeMode: settings.themeMode,
+            // darkTheme: appTheme.darkTheme,
+            // themeMode: settings.themeMode,
             supportedLocales: const [
               Locale('en', 'US'),
               Locale('hi', 'IN'),
@@ -54,15 +53,15 @@ class LandingScreen extends StatelessWidget {
             navigatorKey: NavUtils.navKey,
             routes: {
               '/': (context) => const SplashScreen(),
-              '/home': (context) => const Homescreen(),
+              '/home': (context) => HomeScreen(),
             },
             debugShowCheckedModeBanner: false,
             initialRoute: "/",
             onGenerateTitle: (context) => "appName".tr(context),
           );
         },
+
       ),
     );
   }
 }
-

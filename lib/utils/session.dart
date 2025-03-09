@@ -2,7 +2,7 @@ import 'package:newappmytectra/utils/models/geo.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /*Supported theme modes [0=> System default, 1=> Light, 2=> Dark]*/
-const _THEME_MODE = 1;
+const _THEME_MODE = 3;
 
 /*Color code int value (decimal)*/
 const _COLOR_SCHEME = 0;

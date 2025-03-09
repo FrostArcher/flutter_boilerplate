@@ -36,7 +36,7 @@ class AppSettings with ChangeNotifier {
     return Locale(code);
   }
 
-  ThemeMode get themeMode => _themeMode ?? _getThemeMode(Session.themeMode);
+  ThemeMode get themeMode => _themeMode ?? _getThemeMode(1);
 
   double get cornerRadius => _cornerRadius ?? Session.cornerRadius;
 
