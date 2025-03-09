@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:newappmytectra/utils/navutils.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     return Scaffold(
-      appBar: AppBar(title: Text('Ticketing System')),
+      appBar: AppBar(title: Text('Ticketing System'),leading: SizedBox.shrink(),centerTitle: true,),
       body: Center(
         child: Container(
           padding: EdgeInsets.all(16.0),
@@ -19,11 +20,18 @@ class HomeScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Container(
+                height: 100,
+                width: 100,
+                child: Image.asset("assets/images/logonobg.png"),
+              ),
+              SizedBox(height: 36,),
               Row(
                 children: [
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {
+                        NavUtils.pushTo(context, '/create-ticket');
                         // Navigator.push(context, MaterialPageRoute(builder: (_) => CreateTicketScreen()));
                       },
                       child: Row(

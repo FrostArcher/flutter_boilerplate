@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:newappmytectra/entry/domain/ticket_provider.dart';
+import 'package:newappmytectra/entry/presentation/create_ticket_screen.dart';
 import 'package:newappmytectra/entry/presentation/homescreen.dart';
 import 'package:newappmytectra/entry/presentation/splash.dart';
 import 'package:newappmytectra/utils/app_settings.dart';
@@ -7,6 +9,7 @@ import 'package:newappmytectra/utils/app_styles.dart';
 import 'package:newappmytectra/utils/extensions.dart';
 import 'package:newappmytectra/utils/localizations.dart';
 import 'package:newappmytectra/utils/navutils.dart';
+import 'package:newappmytectra/utils/service_locator.dart';
 import 'package:provider/provider.dart';
 
 class LandingScreen extends StatelessWidget {
@@ -25,7 +28,9 @@ class LandingScreen extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<AppSettings>(create: (_) => AppSettings()),
-        // ChangeNotifierProvider<LoginProvider>(create: (_) => LoginProvider()),
+        ChangeNotifierProvider<TicketProvider>.value(
+          value: serviceLocator.get<TicketProvider>(), // Ensure single instance
+        ),
         // ChangeNotifierProvider<HomeProvider>(create: (_) => HomeProvider()),
         // ChangeNotifierProvider<ConnectivityProvider>(create: (_) => ConnectivityProvider()),
         // ChangeNotifierProvider<ProductProvider>(create: (_) => ProductProvider()),
@@ -50,10 +55,11 @@ class LandingScreen extends StatelessWidget {
             localizationsDelegates: const [
               AppLocalizations.delegate,
             ],
-            navigatorKey: NavUtils.navKey,
+            // navigatorKey: NavUtils.navKey,
             routes: {
               '/': (context) => const SplashScreen(),
               '/home': (context) => HomeScreen(),
+              '/create-ticket': (context) => CreateTicketScreen(),
             },
             debugShowCheckedModeBanner: false,
             initialRoute: "/",

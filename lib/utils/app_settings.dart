@@ -9,7 +9,7 @@ class AppSettings with ChangeNotifier {
   Locale? _locale;
   double? _textScale;
   String? _fontName;
-  int? _color;
+  int? _color = 0;
   double? _cornerRadius;
 
   int? get expandedIndex => _expandedIndex;
