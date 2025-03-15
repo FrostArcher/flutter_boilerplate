@@ -1,6 +1,6 @@
-# newappmytectra
+# Resolve It
 
-A new Flutter project.
+A flutter project with basic implements of provider
 
 ## Getting Started
 
