@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newappmytectra/utils/navutils.dart';
+import 'package:newappmytectra/utils/routes.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -31,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {
-                        NavUtils.pushTo(context, '/create-ticket');
+                        NavUtils.pushTo(context, Routes.CREATE_TICKET);
                         // Navigator.push(context, MaterialPageRoute(builder: (_) => CreateTicketScreen()));
                       },
                       child: Row(
@@ -52,6 +53,7 @@ class HomeScreen extends StatelessWidget {
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {
+                        NavUtils.pushTo(context, Routes.TICKETS_VIEW);
                         // Navigator.push(context, MaterialPageRoute(builder: (_) => TicketListScreen()));
                       },
                       child: Row(

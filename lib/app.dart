@@ -4,11 +4,13 @@ import 'package:newappmytectra/entry/domain/ticket_provider.dart';
 import 'package:newappmytectra/entry/presentation/create_ticket_screen.dart';
 import 'package:newappmytectra/entry/presentation/homescreen.dart';
 import 'package:newappmytectra/entry/presentation/splash.dart';
+import 'package:newappmytectra/entry/presentation/tickets_view.dart';
 import 'package:newappmytectra/utils/app_settings.dart';
 import 'package:newappmytectra/utils/app_styles.dart';
 import 'package:newappmytectra/utils/extensions.dart';
 import 'package:newappmytectra/utils/localizations.dart';
 import 'package:newappmytectra/utils/navutils.dart';
+import 'package:newappmytectra/utils/routes.dart';
 import 'package:newappmytectra/utils/service_locator.dart';
 import 'package:provider/provider.dart';
 
@@ -31,6 +33,7 @@ class LandingScreen extends StatelessWidget {
         ChangeNotifierProvider<TicketProvider>.value(
           value: serviceLocator.get<TicketProvider>(), // Ensure single instance
         ),
+
         // ChangeNotifierProvider<HomeProvider>(create: (_) => HomeProvider()),
         // ChangeNotifierProvider<ConnectivityProvider>(create: (_) => ConnectivityProvider()),
         // ChangeNotifierProvider<ProductProvider>(create: (_) => ProductProvider()),
@@ -57,9 +60,10 @@ class LandingScreen extends StatelessWidget {
             ],
             // navigatorKey: NavUtils.navKey,
             routes: {
-              '/': (context) => const SplashScreen(),
-              '/home': (context) => HomeScreen(),
-              '/create-ticket': (context) => CreateTicketScreen(),
+              Routes.SPLASH: (context) => const SplashScreen(),
+              Routes.HOME: (context) => HomeScreen(),
+              Routes.CREATE_TICKET: (context) => CreateTicketScreen(),
+              Routes.TICKETS_VIEW: (context) => TicketListScreen(),
             },
             debugShowCheckedModeBanner: false,
             initialRoute: "/",

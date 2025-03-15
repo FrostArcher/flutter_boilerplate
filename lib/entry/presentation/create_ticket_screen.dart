@@ -129,6 +129,11 @@ class _CreateTicketScreenState extends State<CreateTicketScreen> {
                               SnackBar(content: Text("User not found with this phone number")),
                             );
                           }
+                          else{
+                            nameController.text = tProvider.currentUser?.name??"";
+                            addressController.text = tProvider.currentUser?.address??"";
+                            // setState(() {});
+                          }
                         },
                         child: Text('Find User'),
                       ),
